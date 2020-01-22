@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'AngularOmeta';
 
   constructor() {
-    var ws = new WebSocket('ws://localhost/ws');
+    var ws = new WebSocket('ws://127.0.0.1:15674/ws');
     var client = Stomp.over(ws);
   
     var on_connect = function() {
@@ -22,7 +22,8 @@ export class AppComponent {
     var on_error =  function() {
       console.log('error');
     };
-    
+
+    client.connect('guest', 'guest', on_connect, on_error, '/');
   }
 }
 
