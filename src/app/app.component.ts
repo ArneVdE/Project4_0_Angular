@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'AngularOmeta';
 
   constructor() {
-    var ws = new WebSocket('ws://team2:team2@192.168.1.2/team2vhost/ws');
+    var ws = new WebSocket('ws://localhost/ws');
     var client = Stomp.over(ws);
   
     var on_connect = function() {
